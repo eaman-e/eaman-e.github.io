@@ -80,13 +80,16 @@ nav a:hover, .footer a:hover { color: var(--teal); }
 .paper-links a, .pub-more { color: var(--lime); font-size: 10px; font-weight: 700; letter-spacing: .35px; }
 .paper-links a:hover, .pub-more:hover { color: #fff; }
 .pub-more { display: inline-block; margin-top: 19px; font-size: 12px; }
-.teaching-layout { display: grid; grid-template-columns: 1.08fr .92fr; gap: 32px; align-items: center; }
-.video-card { overflow: hidden; border: 1px solid var(--line); background: #173d43; box-shadow: 10px 10px 0 #e0e8e2; }
+.video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; align-items: stretch; }
+.video-item { display: flex; min-width: 0; flex-direction: column; }
+.video-card { overflow: hidden; border: 1px solid var(--line); background: #173d43; box-shadow: 8px 8px 0 #e0e8e2; }
 .sample-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #173d43; object-fit: contain; }
-.video-caption { margin: 13px 0 0; color: #55736e; font-size: 11px; letter-spacing: .7px; text-transform: uppercase; }
-.video-caption strong { display: block; margin-top: 3px; color: var(--ink); font: 20px var(--serif); letter-spacing: 0; text-transform: none; }
-.quote { padding-left: 19px; border-left: 2px solid var(--lime); color: #415a60; font: 20px/1.5 var(--serif); }
-.quote small { display: block; margin-top: 12px; color: #71868a; font: 11px var(--sans); letter-spacing: .5px; }
+.video-info { display: flex; flex: 1; flex-direction: column; padding-top: 16px; }
+.video-meta { color: var(--teal); font-size: 10px; font-weight: 750; letter-spacing: 1.1px; line-height: 1.55; text-transform: uppercase; }
+.video-title { min-height: 2.5em; margin: 7px 0 0; color: var(--ink); font: 600 22px/1.25 var(--serif); }
+.video-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: auto; padding-top: 15px; }
+.video-actions .button { padding: 9px 12px; font-size: 12px; }
+.video-actions .text-link { padding: 8px 3px; }
 .book-card { display: grid; grid-template-columns: 130px 1fr; gap: 25px; align-items: center; padding: 30px; background: #e8eee8; }
 .book { display: flex; height: 174px; flex-direction: column; justify-content: space-between; padding: 19px 13px; background: #17474b; box-shadow: 8px 8px 0 #c3d2c6; color: #f3f2e7; }
 .book small { font-size: 8px; letter-spacing: 1.3px; }
@@ -116,7 +119,7 @@ nav a:hover, .footer a:hover { color: var(--teal); }
   .section { padding-block: 57px; }
   .section-head { display: block; }
   .section-intro { margin-top: 14px; }
-  .cards, .pub-list, .teaching-layout { grid-template-columns: 1fr; }
+  .cards, .pub-list, .video-grid { grid-template-columns: 1fr; }
   .card { min-height: 190px; }
   .research h2 { font-size: 36px; }
   .book-card { grid-template-columns: 100px 1fr; gap: 19px; padding: 21px; }
@@ -179,40 +182,39 @@ nav a:hover, .footer a:hover { color: var(--teal); }
   <div><div class="eyebrow">Lectures</div><h2>Mathematics Worth Seeing.</h2></div>
   <p class="section-intro">Watch sample sessions from my courses. Full courses and materials are available through <a class="text-link" href="https://symath.gumroad.com/" target="_blank" rel="noopener">Gumroad ↗</a>.</p>
  </div>
- <div class="teaching-layout">
-  <!-- Add the MP4 file at videos/complex-numbers-contest-geometry-sample.mp4. -->
-  <div>
-   <div class="video-card"><video class="sample-video" controls preload="metadata" aria-label="Beyond Real-ity: Welcome Aboard the Complex Plane"><source src="Lecture-01-P1.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
-   <p class="video-caption"><strong>Session 01, Part 1</strong><strong>Complex Numbers in Contest Geometry</strong></p>
-  </div>
-  <div>
-   <div class="quote"><small>LECTURE-01-PART-1</small>Beyond Real-ity:<small><strong> Welcome Aboard the Complex Plane.</strong></small><small>FULL COURSE PACKAGES ON <a class="text-link" href="https://symath.gumroad.com/" target="_blank" rel="noopener">GUMROAD ↗</a></small></div>
-   <div class="hero-links"><a class="button" href="Lecture-01-P1.mp4" target="_blank" rel="noopener">Open video separately <span aria-hidden="true">↗</span></a><a class="text-link" href="#books">See book materials ↓</a></div>
-  </div>
-    <div>
-   <div class="video-card"><video class="sample-video" controls preload="metadata" aria-label="Beyond Real-ity: Welcome Aboard the Complex Plane"><source src="Lecture-01-P2.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
-   <p class="video-caption"><strong>Session 01, Part 2</strong><strong>Complex Numbers in Contest Geometry</strong></p>
-  </div>
-  <div>
-   <div class="quote"><small>LECTURE-01-PART-2</small>Beyond Real-ity:<small><strong> Welcome Aboard the Complex Plane.</strong></small><small>FULL COURSE PACKAGES ON <a class="text-link" href="https://symath.gumroad.com/" target="_blank" rel="noopener">GUMROAD ↗</a></small></div>
-   <div class="hero-links"><a class="button" href="Lecture-01-P2.mp4" target="_blank" rel="noopener">Open video separately <span aria-hidden="true">↗</span></a><a class="text-link" href="#books">See book materials ↓</a></div>
-  </div>
-    <div>
-   <div class="video-card"><video class="sample-video" controls preload="metadata" aria-label="Beyond Real-ity: The Field Trip"><source src="Lecture-02-P1.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
-   <p class="video-caption"><strong>Session 02, Part 1</strong><strong>Complex Numbers in Contest Geometry</strong></p>
-  </div>
-  <div>
-   <div class="quote"><small>LECTURE-02-PART-1</small>Beyond Real-ity:<small><strong> The Field Trip.</strong></small><small>FULL COURSE PACKAGES ON <a class="text-link" href="https://symath.gumroad.com/" target="_blank" rel="noopener">GUMROAD ↗</a></small></div>
-   <div class="hero-links"><a class="button" href="Lecture-02-P1.mp4" target="_blank" rel="noopener">Open video separately <span aria-hidden="true">↗</span></a><a class="text-link" href="#books">See book materials ↓</a></div>
-  </div>
-   <div>
-   <div class="video-card"><video class="sample-video" controls preload="metadata" aria-label="Beyond Real-ity: The Field Trip"><source src="Lecture-02-P2.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
-   <p class="video-caption"><strong>Session 02, Part 2</strong><strong>Complex Numbers in Contest Geometry</strong></p>
-  </div>
-  <div>
-   <div class="quote"><small>LECTURE-02-PART-2</small>Beyond Real-ity:<small><strong> The Field Trip.</strong></small><small>FULL COURSE PACKAGES ON <a class="text-link" href="https://symath.gumroad.com/" target="_blank" rel="noopener">GUMROAD ↗</a></small></div>
-   <div class="hero-links"><a class="button" href="Lecture-02-P2.mp4" target="_blank" rel="noopener">Open video separately <span aria-hidden="true">↗</span></a><a class="text-link" href="#books">See book materials ↓</a></div>
-  </div>
+ <div class="video-grid">
+  <article class="video-item">
+   <div class="video-card"><video class="sample-video" controls preload="metadata" aria-label="Welcome Aboard the Complex Plane, Lecture 1 Part I"><source src="Lecture-01-P1.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
+   <div class="video-info">
+    <div class="video-meta">Complex Numbers in Contest Geometry<br>Chapter 01: Beyond Real-ity · Lecture 01, Part I</div>
+    <h4 class="video-title">Welcome Aboard the Complex Plane.</h4>
+    <div class="video-actions"><a class="button" href="Lecture-01-P1.mp4" target="_blank" rel="noopener">Open video separately <span aria-hidden="true">↗</span></a><a class="text-link" href="#books">Book materials ↓</a></div>
+   </div>
+  </article>
+  <article class="video-item">
+   <div class="video-card"><video class="sample-video" controls preload="metadata" aria-label="Welcome Aboard the Complex Plane, Lecture 1 Part II"><source src="Lecture-01-P2.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
+   <div class="video-info">
+    <div class="video-meta">Complex Numbers in Contest Geometry<br>Chapter 01: Beyond Real-ity · Lecture 01, Part II</div>
+    <h3 class="video-title">Welcome Aboard the Complex Plane.</h3>
+    <div class="video-actions"><a class="button" href="Lecture-01-P2.mp4" target="_blank" rel="noopener">Open video separately <span aria-hidden="true">↗</span></a><a class="text-link" href="#books">Book materials ↓</a></div>
+   </div>
+  </article>
+  <article class="video-item">
+   <div class="video-card"><video class="sample-video" controls preload="metadata" aria-label="The Field Trip, Lecture 2 Part I"><source src="Lecture-02-P1.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
+   <div class="video-info">
+    <div class="video-meta">Complex Numbers in Contest Geometry<br>Chapter 01: Beyond Real-ity · Lecture 02, Part I</div>
+    <h3 class="video-title">The Field Trip.</h3>
+    <div class="video-actions"><a class="button" href="Lecture-02-P1.mp4" target="_blank" rel="noopener">Open video separately <span aria-hidden="true">↗</span></a><a class="text-link" href="#books">Book materials ↓</a></div>
+   </div>
+  </article>
+  <article class="video-item">
+   <div class="video-card"><video class="sample-video" controls preload="metadata" aria-label="The Field Trip, Lecture 2 Part II"><source src="Lecture-02-P2.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
+   <div class="video-info">
+    <div class="video-meta">Complex Numbers in Contest Geometry<br>Chapter 01: Beyond Real-ity · Lecture 02, Part II</div>
+    <h3 class="video-title">The Field Trip.</h3>
+    <div class="video-actions"><a class="button" href="Lecture-02-P2.mp4" target="_blank" rel="noopener">Open video separately <span aria-hidden="true">↗</span></a><a class="text-link" href="#books">Book materials ↓</a></div>
+   </div>
+  </article>
  </div>
 </section>
 <section class="wrap section" id="books">
